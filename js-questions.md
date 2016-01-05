@@ -330,3 +330,29 @@ function stringPrint(text) {
 stringPrint("cake");
 ```
 ### Make a function called isMatch(string1, string2) that will return true if the strings match, and false if they don't. The rules are that each letter in string2 must match a letter in string1... Except that an asterisk in string1 can stand for 0 to infinity repeats of the string1's previous character to the corresponding part in string2.
+
+### Write a function for the longest string in a sentence
+
+```
+function longestWord(sentence) {
+
+  // Remove Punctuation
+  var noPunc = sentence.replace(/[.,-\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+
+  // Split the sentence into an array
+  var senArray = noPunc.split(" ");
+
+  // Sort the array by word length
+  senArray.sort(function(a, b) {
+
+    // use 'b' first to have the right direction
+    return b.length - a.length;
+  });
+
+  // Assign the first item in the array to sentence
+  sentence = senArray[0];
+
+  return sentence; 
+}
+```
+
